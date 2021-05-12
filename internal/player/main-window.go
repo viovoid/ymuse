@@ -337,14 +337,17 @@ func (w *MainWindow) onDelete() {
 func (w *MainWindow) onLibraryListBoxButtonPress(_ *gtk.ListBox, event *gdk.Event) {
 	switch btn := gdk.EventButtonNewFromEvent(event); btn.Type() {
 	// Mouse click
+	/*
 	case gdk.EVENT_BUTTON_PRESS:
 		// Right click
 		if btn.Button() == 3 {
 			w.LibraryListBox.SelectRow(w.LibraryListBox.GetRowAtY(int(btn.Y())))
 			w.LibraryMenu.PopupAtPointer(event)
 		}
+		*/
 	// Double click
-	case gdk.EVENT_DOUBLE_BUTTON_PRESS:
+	case gdk.EVENT_BUTTON_PRESS, gdk.EVENT_TOUCH_END:
+		w.LibraryListBox.SelectRow(w.LibraryListBox.GetRowAtY(int(btn.Y())))
 		w.applyLibrarySelection(tbNone)
 	}
 }
@@ -586,14 +589,17 @@ func (w *MainWindow) onStreamEdit() {
 func (w *MainWindow) onStreamListBoxButtonPress(_ *gtk.ListBox, event *gdk.Event) {
 	switch btn := gdk.EventButtonNewFromEvent(event); btn.Type() {
 	// Mouse click
+	/*
 	case gdk.EVENT_BUTTON_PRESS:
 		// Right click
 		if btn.Button() == 3 {
 			w.StreamsListBox.SelectRow(w.StreamsListBox.GetRowAtY(int(btn.Y())))
 			w.StreamsMenu.PopupAtPointer(event)
 		}
+		*/
 	// Double click
-	case gdk.EVENT_DOUBLE_BUTTON_PRESS:
+	case gdk.EVENT_BUTTON_PRESS:
+		w.StreamsListBox.SelectRow(w.StreamsListBox.GetRowAtY(int(btn.Y())))
 		w.applyStreamSelection(tbNone)
 	}
 }

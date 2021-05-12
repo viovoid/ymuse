@@ -494,10 +494,10 @@
     </child>
   </object>
   <object class="GtkApplicationWindow" id="AppWindow">
-    <property name="width_request">600</property>
+    <property name="width_request">360</property>
     <property name="height_request">300</property>
     <property name="can_focus">False</property>
-    <property name="default_width">800</property>
+    <property name="default_width">360</property>
     <property name="default_height">600</property>
     <property name="icon_name">ymuse</property>
     <signal name="delete-event" handler="on_MainWindow_delete" swapped="no"/>
@@ -619,22 +619,6 @@
                         <property name="label" translatable="yes">Delete</property>
                         <property name="use_underline">True</property>
                         <property name="icon_name">ymuse-delete-track-symbolic</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="homogeneous">True</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkToolButton" id="QueueSaveToolButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="tooltip_text" translatable="yes">Save the play queue as a playlist</property>
-                        <property name="is_important">True</property>
-                        <property name="action_name">app.queue.save</property>
-                        <property name="label" translatable="yes">Save ▾</property>
-                        <property name="use_underline">True</property>
-                        <property name="icon_name">ymuse-save-symbolic</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -777,7 +761,7 @@
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkBox" id="LibraryTopBox">
+                  <object class="GtkBox" id="LibraryTopBox0">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
@@ -795,49 +779,6 @@
                             <property name="action_name">app.library.update</property>
                             <property name="label" translatable="yes">Update ▾</property>
                             <property name="icon_name">ymuse-update-db-symbolic</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="homogeneous">True</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkToolButton" id="LibraryRenameToolButton">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="tooltip_text" translatable="yes">Rename the selected item</property>
-                            <property name="action_name">app.library.rename</property>
-                            <property name="label" translatable="yes">Rename</property>
-                            <property name="icon_name">ymuse-edit-symbolic</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="homogeneous">True</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkToolButton" id="LibraryDeleteToolButton">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="tooltip_text" translatable="yes">Delete the selected item</property>
-                            <property name="action_name">app.library.delete</property>
-                            <property name="label" translatable="yes">Delete</property>
-                            <property name="icon_name">ymuse-delete-symbolic</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="homogeneous">True</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkToolButton" id="LibraryAddToPlaylistToolButton">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="tooltip_text" translatable="yes">Add the selected item to a playlist</property>
-                            <property name="is_important">True</property>
-                            <property name="action_name">app.library.add-to-playlist</property>
-                            <property name="label" translatable="yes">Add to ▾</property>
-                            <property name="icon_name">ymuse-add-symbolic</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1202,240 +1143,242 @@
             <property name="margin_bottom">6</property>
             <property name="hexpand">True</property>
             <property name="vexpand">False</property>
+	    <property name="orientation">vertical</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkToolbar" id="BottomToolbar">
+              <object class="GtkBox" id="BottomBarBox1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_size">4</property>
+                <property name="margin_bottom">6</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">False</property>
+                <property name="spacing">12</property>
                 <child>
-                  <object class="GtkToolButton" id="PreviousToolButton">
+                  <object class="GtkToolbar" id="BottomToolbar">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Previous track</property>
-                    <property name="action_name">app.player.previous</property>
-                    <property name="label" translatable="yes">Previous</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-previous-symbolic</property>
+                    <property name="icon_size">4</property>
+                    <child>
+                      <object class="GtkToolButton" id="PreviousToolButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Previous track</property>
+                        <property name="action_name">app.player.previous</property>
+                        <property name="label" translatable="yes">Previous</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-previous-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToolButton" id="StopToolButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Stop playback</property>
+                        <property name="action_name">app.player.stop</property>
+                        <property name="label" translatable="yes">Stop</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-stop-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToolButton" id="PlayPauseButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Pause or resume playback</property>
+                        <property name="action_name">app.player.play-pause</property>
+                        <property name="label" translatable="yes">Play/Pause</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-play-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToolButton" id="NextToolButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Next track</property>
+                        <property name="action_name">app.player.next</property>
+                        <property name="label" translatable="yes">Next</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-next-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorToolItem" id="BtnNextSeparatorItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToggleToolButton" id="RandomButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Shuffle mode</property>
+                        <property name="action_name">app.player.toggle.random</property>
+                        <property name="label" translatable="yes">Random</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-random-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToggleToolButton" id="RepeatButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Repeat mode</property>
+                        <property name="action_name">app.player.toggle.repeat</property>
+                        <property name="label" translatable="yes">Repeat</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-repeat-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToggleToolButton" id="ConsumeButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Consume mode</property>
+                        <property name="action_name">app.player.toggle.consume</property>
+                        <property name="label" translatable="yes">Consume</property>
+                        <property name="use_underline">True</property>
+                        <property name="icon_name">ymuse-consume-symbolic</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkToolButton" id="StopToolButton">
+                  <object class="GtkVolumeButton" id="VolumeButton">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Stop playback</property>
-                    <property name="action_name">app.player.stop</property>
-                    <property name="label" translatable="yes">Stop</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-stop-symbolic</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkToolButton" id="PlayPauseButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Pause or resume playback</property>
-                    <property name="action_name">app.player.play-pause</property>
-                    <property name="label" translatable="yes">Play/Pause</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-play-symbolic</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkToolButton" id="NextToolButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Next track</property>
-                    <property name="action_name">app.player.next</property>
-                    <property name="label" translatable="yes">Next</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-next-symbolic</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkSeparatorToolItem" id="BtnNextSeparatorItem">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkToggleToolButton" id="RandomButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Shuffle mode</property>
-                    <property name="action_name">app.player.toggle.random</property>
-                    <property name="label" translatable="yes">Random</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-random-symbolic</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkToggleToolButton" id="RepeatButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Repeat mode</property>
-                    <property name="action_name">app.player.toggle.repeat</property>
-                    <property name="label" translatable="yes">Repeat</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-repeat-symbolic</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkToggleToolButton" id="ConsumeButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Consume mode</property>
-                    <property name="action_name">app.player.toggle.consume</property>
-                    <property name="label" translatable="yes">Consume</property>
-                    <property name="use_underline">True</property>
-                    <property name="icon_name">ymuse-consume-symbolic</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="homogeneous">True</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkVolumeButton" id="VolumeButton">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="focus_on_click">False</property>
-                <property name="receives_default">True</property>
-                <property name="relief">none</property>
-                <property name="orientation">vertical</property>
-                <property name="adjustment">VolumeAdjustment</property>
-                <property name="icons">audio-volume-muted-symbolic
+                    <property name="can_focus">True</property>
+                    <property name="focus_on_click">False</property>
+                    <property name="receives_default">True</property>
+                    <property name="relief">none</property>
+                    <property name="orientation">vertical</property>
+                    <property name="adjustment">VolumeAdjustment</property>
+                    <property name="icons">audio-volume-muted-symbolic
 audio-volume-high-symbolic
 audio-volume-low-symbolic
 audio-volume-medium-symbolic</property>
-                <signal name="value-changed" handler="on_VolumeButton_valueChanged" swapped="no"/>
-                <child internal-child="plus_button">
-                  <object class="GtkButton">
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <property name="relief">none</property>
+                    <signal name="value-changed" handler="on_VolumeButton_valueChanged" swapped="no"/>
+                    <child internal-child="plus_button">
+                      <object class="GtkButton">
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="relief">none</property>
+                      </object>
+                    </child>
+                    <child internal-child="minus_button">
+                      <object class="GtkButton">
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="relief">none</property>
+                      </object>
+                    </child>
                   </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
                 </child>
-                <child internal-child="minus_button">
-                  <object class="GtkButton">
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <property name="relief">none</property>
+              </object>
+            </child>   
+            <child>
+              <object class="GtkBox" id="BottomBarBox2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_bottom">6</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">False</property>
+                <property name="spacing">12</property>
+                <child>
+                  <object class="GtkScale" id="PlayPositionScale">
+                    <property name="width_request">32</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
+                    <property name="adjustment">PlayPositionAdjustment</property>
+                    <property name="restrict_to_fill_level">False</property>
+                    <property name="fill_level">0</property>
+                    <property name="round_digits">0</property>
+                    <property name="digits">0</property>
+                    <property name="draw_value">False</property>
+                    <property name="value_pos">right</property>
+                    <signal name="button-press-event" handler="on_PlayPositionScale_buttonEvent" swapped="no"/>
+                    <signal name="button-release-event" handler="on_PlayPositionScale_buttonEvent" swapped="no"/>
+                    <signal name="value-changed" handler="on_PlayPositionScale_valueChanged" swapped="no"/>
                   </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="PositionLabel">
+                    <property name="width_request">32</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Current track time</property>
+                    <property name="label">&lt;big&gt;0:00&lt;/big&gt; / 0:00</property>
+                    <property name="use_markup">True</property>
+                    <property name="track_visited_links">False</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="padding">6</property>
+                    <property name="position">3</property>
+                  </packing>
                 </child>
               </object>
               <packing>
                 <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkScale" id="PlayPositionScale">
-                <property name="width_request">100</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="hexpand">True</property>
-                <property name="adjustment">PlayPositionAdjustment</property>
-                <property name="restrict_to_fill_level">False</property>
-                <property name="fill_level">0</property>
-                <property name="round_digits">0</property>
-                <property name="digits">0</property>
-                <property name="draw_value">False</property>
-                <property name="value_pos">right</property>
-                <signal name="button-press-event" handler="on_PlayPositionScale_buttonEvent" swapped="no"/>
-                <signal name="button-release-event" handler="on_PlayPositionScale_buttonEvent" swapped="no"/>
-                <signal name="value-changed" handler="on_PlayPositionScale_valueChanged" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">2</property>
               </packing>
             </child>
-            <child>
-              <object class="GtkLabel" id="PositionLabel">
-                <property name="width_request">100</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Current track time</property>
-                <property name="label">&lt;big&gt;0:00&lt;/big&gt; / 0:00</property>
-                <property name="use_markup">True</property>
-                <property name="track_visited_links">False</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="padding">6</property>
-                <property name="position">3</property>
-              </packing>
-            </child>
           </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
-          </packing>
         </child>
       </object>
-    </child>
-  </object>
-  <object class="GtkPopoverMenu" id="LibraryAddToPlaylistPopoverMenu">
-    <property name="can_focus">False</property>
-    <property name="relative_to">LibraryAddToPlaylistToolButton</property>
-    <child>
-      <object class="GtkBox" id="LibraryAddToPlaylistBox">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="border_width">12</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <placeholder/>
-        </child>
-      </object>
-      <packing>
-        <property name="submenu">main</property>
-        <property name="position">1</property>
-      </packing>
     </child>
   </object>
   <object class="GtkPopoverMenu" id="LibraryUpdatePopoverMenu">
@@ -1505,145 +1448,6 @@ audio-volume-medium-symbolic</property>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">3</property>
-          </packing>
-        </child>
-      </object>
-      <packing>
-        <property name="submenu">main</property>
-        <property name="position">1</property>
-      </packing>
-    </child>
-  </object>
-  <object class="GtkPopoverMenu" id="QueueSavePopoverMenu">
-    <property name="can_focus">False</property>
-    <property name="relative_to">QueueSaveToolButton</property>
-    <child>
-      <object class="GtkBox" id="QueueSaveBox">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="border_width">12</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">6</property>
-        <child>
-          <object class="GtkGrid" id="QueueSaveGrid">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="hexpand">True</property>
-            <property name="row_spacing">6</property>
-            <property name="column_spacing">6</property>
-            <child>
-              <object class="GtkLabel" id="QueueSavePlaylistLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="hexpand">False</property>
-                <property name="label" translatable="yes">Save into playlist</property>
-                <property name="xalign">1</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkComboBoxText" id="QueueSavePlaylistComboBox">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="hexpand">True</property>
-                <signal name="changed" handler="on_QueueSavePopoverMenu_validate" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="QueueSavePlaylistNameEntry">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="hexpand">True</property>
-                <signal name="changed" handler="on_QueueSavePopoverMenu_validate" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="QueueSaveSelectedOnlyCheckButton">
-                <property name="label" translatable="yes">Save selected tracks only</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="draw_indicator">True</property>
-                <signal name="toggled" handler="on_QueueSavePopoverMenu_validate" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="QueueSavePlaylistNameLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="hexpand">False</property>
-                <property name="label" translatable="yes">New playlist name</property>
-                <property name="xalign">1</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkBox" id="QueueSaveBottomBox">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <object class="GtkModelButton" id="QueueSaveReplaceModelButton">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="action_name">app.queue.save.replace</property>
-                <property name="text" translatable="yes">Replace playlist</property>
-                <property name="centered">True</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkModelButton" id="QueueSaveAppendModelButton">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="action_name">app.queue.save.append</property>
-                <property name="text" translatable="yes">Append tracks</property>
-                <property name="centered">True</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
           </packing>
         </child>
       </object>

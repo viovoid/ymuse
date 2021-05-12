@@ -1,3 +1,10 @@
+In this repository I have made some interface tweaks so that the window fits reasonably on a PinePhone screen. Tested in Mobian Phosh, at 200% scaling, with `scale-to-fit ymuse on`. Essentially, playlist functionality has been removed (with all of its buttons), and double click-events fire from a single click, to avoid the need to use the PinePhone keyboard (right-click functionality has also been removed).
+
+Also, Album Artist is used over Artist for grouping/sorting purposes, as a matter of preference :)
+
+The original readme is retained below:
+
+
 [![Latest release](https://img.shields.io/github/v/release/yktoo/ymuse.svg)](https://github.com/yktoo/ymuse/releases/latest)
 [![Releases](https://img.shields.io/github/downloads/yktoo/ymuse/total.svg)](https://github.com/yktoo/ymuse/releases)
 [![License](https://img.shields.io/github/license/yktoo/ymuse.svg)](COPYING)

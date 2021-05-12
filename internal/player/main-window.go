@@ -1112,7 +1112,7 @@ func (w *MainWindow) libraryShowAlbumFromQueue() {
 		// Update the current library path
 		w.libPath.SetElements([]LibraryPathElement{
 			NewArtistsLibElement(),
-			NewArtistLibElementVal(attrs[config.MpdTrackAttributes[config.MTAttrArtist].AttrName]),
+			NewArtistLibElementVal(attrs[config.MpdTrackAttributes[config.MTAttrAlbumArtist].AttrName]),
 			NewAlbumLibElementVal(attrs[config.MpdTrackAttributes[config.MTAttrAlbum].AttrName]),
 		})
 
@@ -1127,7 +1127,7 @@ func (w *MainWindow) libraryShowArtistFromQueue() {
 		// Update the current library path
 		w.libPath.SetElements([]LibraryPathElement{
 			NewArtistsLibElement(),
-			NewArtistLibElementVal(attrs[config.MpdTrackAttributes[config.MTAttrArtist].AttrName]),
+			NewArtistLibElementVal(attrs[config.MpdTrackAttributes[config.MTAttrAlbumArtist].AttrName]),
 		})
 
 		// Switch to the library tab

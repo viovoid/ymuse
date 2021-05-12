@@ -125,7 +125,7 @@ func newConfig() *Config {
 		MpdAutoConnect:   true,
 		MpdAutoReconnect: true,
 		QueueColumns: []ColumnSpec{
-			{ID: MTAttrArtist},
+			{ID: MTAttrAlbumArtist},
 			{ID: MTAttrYear},
 			{ID: MTAttrAlbum},
 			{ID: MTAttrDisc},

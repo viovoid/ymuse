@@ -656,7 +656,7 @@ func (e *GenreLibElement) Unmarshal(data string) error {
 }
 
 func (e *GenreLibElement) ChildAttributeID() int {
-	return config.MTAttrArtist
+	return config.MTAttrAlbumArtist
 }
 
 func (e *GenreLibElement) NewChild(value string) LibraryPathElement {
@@ -702,7 +702,7 @@ func (e *ArtistsLibElement) Unmarshal(string) error {
 }
 
 func (e *ArtistsLibElement) ChildAttributeID() int {
-	return config.MTAttrArtist
+	return config.MTAttrAlbumArtist
 }
 
 func (e *ArtistsLibElement) NewChild(value string) LibraryPathElement {
@@ -722,7 +722,7 @@ func NewArtistLibElement() LibraryPathElement {
 }
 
 func NewArtistLibElementVal(value string) LibraryPathElement {
-	return &ArtistLibElement{BaseAttrHolder{attrID: config.MTAttrArtist, attrValue: value}}
+	return &ArtistLibElement{BaseAttrHolder{attrID: config.MTAttrAlbumArtist, attrValue: value}}
 }
 
 func (e *ArtistLibElement) Icon() string {
